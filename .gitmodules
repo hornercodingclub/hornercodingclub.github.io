@@ -1,0 +1,3 @@
+[submodule "lib/minimal.css"]
+	path = lib/minimal.css
+	url = https://github.com/HereIsKevin/minimal.css/
