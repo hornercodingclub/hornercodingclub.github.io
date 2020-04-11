@@ -8,7 +8,7 @@ except ModuleNotFoundError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "jinja2"])
     import jinja2
 
-SOURCES = f"{os.path.dirname(os.path.abspath(__file__))}/_sources/"
+SOURCES = f"{os.path.dirname(os.path.abspath(__file__))}/src/"
 FILES = ["index.html"]
 TEMPLATE = "_template.html"
 VARIABLES = {}
