@@ -9,25 +9,24 @@ except ModuleNotFoundError:
     import jinja2
 
 SOURCES = f"{os.path.dirname(os.path.abspath(__file__))}/src/"
-FILES = ["index.html"]
+FILES = {"index.html": {}}
 TEMPLATE = "_template.html"
-VARIABLES = {}
 
 
-def render_template(file):
+def render_template(file, variables):
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(SOURCES))
-    return env.get_template(file).render(**VARIABLES, TEMPLATE=TEMPLATE)
+    return env.get_template(file).render(TEMPLATE=TEMPLATE, **variables)
 
 
 def main():
-    for item in FILES:
+    for item, variables in FILES.items():
         with open(item, "w") as out:
             try:
                 os.makedirs(os.path.dirname(item))
             except FileNotFoundError:
                 pass
 
-            out.write(render_template(item))
+            out.write(render_template(item, variables))
 
 
 if __name__ == "__main__":
