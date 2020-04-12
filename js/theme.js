@@ -7,16 +7,10 @@ function initialize() {
         localStorage.setItem("theme", "light");
     }
 
-    let stylesheet = document.createElement("link");
-    stylesheet.setAttribute(
+    document.getElementById("stylesheet").setAttribute(
         "href",
         `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`
     );
-    stylesheet.setAttribute("type", "text/css");
-    stylesheet.setAttribute("rel", "stylesheet");
-    stylesheet.setAttribute("id", "stylesheet");
-
-    document.head.appendChild(stylesheet);
 }
 
 window.toggleTheme = function toggle() {
