@@ -2,20 +2,8 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+Only the latest commit on the `master` branch is fully supported. For all other commits or tags, please use the code at your own risk.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+To report a vulnerability, please do **not** use issues. Instead, please open a request in security advisories under security to help keep to vulnerability private and others safe. Please expect to wait up to one week before your request is reviewed, or within days if the request is high or critical. If the security vulnerability is not directly related to the code in this repository and instead is related to a dependency, it is declined. Otherwise, it is considered.
