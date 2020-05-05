@@ -9,7 +9,7 @@ except ModuleNotFoundError:
     import jinja2
 
 SOURCES = f"{os.path.dirname(os.path.abspath(__file__))}/src/"
-FILES = {"index.html": {}}
+FILES = {"index.html": {}, "projects.html": {}}
 TEMPLATE = "_template.html"
 
 
