@@ -13,12 +13,22 @@ function initialize() {
     );
 }
 
-window.toggleTheme = function toggle() {
+function toggleIcon() {
+    if (localStorage.getItem("theme") === "light") {
+        document.getElementById("theme-toggle").textContent = "🌙";
+    } else if (localStorage.getItem("theme") === "dark") {
+        document.getElementById("theme-toggle").textContent = "☀️";
+    }
+}
+
+function toggle() {
     if (localStorage.getItem("theme") === "light") {
         localStorage.setItem("theme", "dark");
     } else if (localStorage.getItem("theme") === "dark") {
         localStorage.setItem("theme", "light");
     }
+
+    toggleIcon();
 
     document
         .getElementById("stylesheet")
@@ -27,5 +37,10 @@ window.toggleTheme = function toggle() {
             `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`
         );
 };
+
+window.onload = function initializeIcon() {
+    toggleIcon();
+    document.getElementById("theme-toggle").onclick = toggle;
+}
 
 initialize();
