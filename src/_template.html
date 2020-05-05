@@ -14,8 +14,12 @@
         <link rel="preload" href="/css/minimal.css/minimal_light.min.css" as="style" type="text/css">
         <link rel="preload" href="/css/minimal.css/minimal_dark.min.css" as="style" type="text/css">
         <link rel="preload" href="/css/footer.css" as="style" type="text/css">
+        <link rel="preload" href="/css/video.css" as="style" type="text/css">
+        <link rel="preload" href="/css/theme.css" as="style" type="text/css">
         <link id="stylesheet" href="/css/minimal.css/minimal_light.min.css" type="text/css" rel="stylesheet">
         <link href="/css/footer.css" type="text/css" rel="stylesheet">
+        <link href="/css/video.css" type="text/css" rel="stylesheet">
+        <link href="/css/theme.css" type="text/css" rel="stylesheet">
         <script src="/js/theme.js" type="module"></script>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js" type="text/javascript" async></script>
         <style>
@@ -30,7 +34,7 @@
             <span class="spacer"></span>
             {% block nav %}
             {% endblock %}
-            <a href="javascript:toggleTheme();">Toggle Theme</a>
+            <a id="theme-toggle">🌙</a>
         </nav>
         <header>
             {% block header %}
