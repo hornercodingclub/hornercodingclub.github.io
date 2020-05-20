@@ -41,9 +41,13 @@
                 </span>
             </a>
             <span class="spacer"></span>
-            {% block nav %}
-            {% endblock %}
-            <a id="theme-toggle">🌙</a>
+            <label for="toggle" class="toggle">menu</label>
+            <input type="checkbox" role="button" id="toggle">
+            <div class="menu">
+                {% block nav %}
+                {% endblock %}
+                <a id="theme-toggle">🌙</a>
+            </div>
         </nav>
         <header>
             {% block header %}
