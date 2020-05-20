@@ -18,3 +18,11 @@ nav .home-text {
         display: none;
     }
 }
+
+header {
+    background-image: url(/images/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
