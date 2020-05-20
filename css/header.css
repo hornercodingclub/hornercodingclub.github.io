@@ -1,0 +1,20 @@
+nav .home-container {
+    padding: 0;
+    margin: 0;
+}
+
+nav .home-image {
+    width: 40px;
+    vertical-align: middle;
+}
+
+nav .home-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 760px) {
+    nav .home-text {
+        display: none;
+    }
+}
