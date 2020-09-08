@@ -7,10 +7,7 @@ function initialize() {
         localStorage.setItem("theme", "light");
     }
 
-    document.getElementById("stylesheet").setAttribute(
-        "href",
-        `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`
-    );
+    toggleStyle();
 }
 
 function toggleIcon() {
@@ -21,6 +18,25 @@ function toggleIcon() {
     }
 }
 
+function toggleStyle() {
+    const oldStyle = document.getElementById("stylesheet");
+    const newStyle = document.createElement("link");
+
+    newStyle.setAttribute(
+        "href",
+        `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`
+    );
+    newStyle.setAttribute("type", "text/css");
+    newStyle.setAttribute("rel", "stylesheet");
+
+    oldStyle.after(newStyle);
+
+    window.setTimeout(() => {
+        oldStyle.remove();
+        newStyle.id = "stylesheet";
+    }, 100);
+}
+
 function toggle() {
     if (localStorage.getItem("theme") === "light") {
         localStorage.setItem("theme", "dark");
@@ -29,18 +45,12 @@ function toggle() {
     }
 
     toggleIcon();
-
-    document
-        .getElementById("stylesheet")
-        .setAttribute(
-            "href",
-            `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`
-        );
-};
+    toggleStyle();
+}
 
 window.onload = function initializeIcon() {
     toggleIcon();
     document.getElementById("theme-toggle").onclick = toggle;
-}
+};
 
 initialize();
