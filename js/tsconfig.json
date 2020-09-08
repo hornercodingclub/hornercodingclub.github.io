@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "strict": true
+    },
+    "files": ["theme.ts"]
+}
