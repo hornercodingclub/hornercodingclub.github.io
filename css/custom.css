@@ -80,3 +80,9 @@ header {
 video {
     max-width: 100%;
 }
+
+/***** transition *****/
+
+* {
+    transition: all 0.5s ease;
+}
