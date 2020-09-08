@@ -1,56 +1,58 @@
-function initialize() {
-    if (
-        !localStorage.getItem("theme") ||
-        (localStorage.getItem("theme") !== "light" &&
-            localStorage.getItem("theme") !== "dark")
-    ) {
+"use strict";
+const initialize = () => {
+    const theme = localStorage.getItem("theme");
+    if (theme !== "light" && theme !== "dark") {
         localStorage.setItem("theme", "light");
     }
-
     toggleStyle();
-}
-
-function toggleIcon() {
-    if (localStorage.getItem("theme") === "light") {
-        document.getElementById("theme-toggle").textContent = "🌙";
-    } else if (localStorage.getItem("theme") === "dark") {
-        document.getElementById("theme-toggle").textContent = "☀️";
+    window.addEventListener("load", () => {
+        var _a;
+        toggleIcon();
+        (_a = document
+            .getElementById("theme-toggle")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", toggle);
+    });
+};
+const toggleIcon = () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const theme = localStorage.getItem("theme");
+    if (themeToggle === null) {
+        return;
     }
-}
-
-function toggleStyle() {
+    if (theme === "light") {
+        themeToggle.textContent = "🌙";
+    }
+    else if (theme === "dark") {
+        themeToggle.textContent = "☀️";
+    }
+};
+const toggleStyle = () => {
     const oldStyle = document.getElementById("stylesheet");
     const newStyle = document.createElement("link");
-
-    newStyle.setAttribute(
-        "href",
-        `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`
-    );
-    newStyle.setAttribute("type", "text/css");
-    newStyle.setAttribute("rel", "stylesheet");
-
-    oldStyle.after(newStyle);
-
-    window.setTimeout(() => {
-        oldStyle.remove();
+    newStyle.href = `/css/minimal.css/minimal_${localStorage.getItem("theme")}.min.css`;
+    newStyle.type = "text/css";
+    newStyle.rel = "stylesheet";
+    if (oldStyle === null) {
+        document.head.prepend(newStyle);
+    }
+    else {
+        oldStyle.after(newStyle);
+    }
+    setTimeout(() => {
+        if (oldStyle !== null) {
+            oldStyle.remove();
+        }
         newStyle.id = "stylesheet";
-    }, 100);
-}
-
-function toggle() {
-    if (localStorage.getItem("theme") === "light") {
+    }, 200);
+};
+const toggle = () => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") {
         localStorage.setItem("theme", "dark");
-    } else if (localStorage.getItem("theme") === "dark") {
+    }
+    else if (theme === "dark") {
         localStorage.setItem("theme", "light");
     }
-
     toggleIcon();
     toggleStyle();
-}
-
-window.onload = function initializeIcon() {
-    toggleIcon();
-    document.getElementById("theme-toggle").onclick = toggle;
 };
-
 initialize();
