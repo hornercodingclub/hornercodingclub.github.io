@@ -1,0 +1,19 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "JS resources for Horner Coding Club website",
+  "main": "theme.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hornercodingclub/hornercodingclub.github.io.git"
+  },
+  "author": "Kevin Feng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hornercodingclub/hornercodingclub.github.io/issues"
+  },
+  "homepage": "https://github.com/hornercodingclub/hornercodingclub.github.io#readme",
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
