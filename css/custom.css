@@ -47,7 +47,7 @@ nav .home-text {
 /***** header *****/
 
 header {
-    background-image: url(/images/background.png);
+    background-image: url(/images/background_blurred.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
